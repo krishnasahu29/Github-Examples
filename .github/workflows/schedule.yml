@@ -1,0 +1,15 @@
+name: Hello Every Minute
+
+on:
+  schedule:
+    - cron: "*/2 * * * *"
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello and Current Time
+        run: |
+          echo "Hello!"
+          echo "Current IST time: $(TZ=Asia/Kolkata date)"
